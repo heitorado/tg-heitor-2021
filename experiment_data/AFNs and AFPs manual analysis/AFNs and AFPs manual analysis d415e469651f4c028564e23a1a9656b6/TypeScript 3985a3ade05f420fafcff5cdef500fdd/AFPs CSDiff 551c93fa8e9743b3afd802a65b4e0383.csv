@@ -1,0 +1,4 @@
+﻿Repository,Commit,Comment,Category,Verdict
+vscode,894b7782cce5ae9fbc9b307e86121f820f435a53,Alignment problem - RIGHT erased and added much more lines than LEFT.,csdiff-alignment,csdiff-afp
+vscode,c1a0defa5f2901ba13256de349ecfb20cc38a86e,"Alignment problem - more than 165 LOCs erased in RIGHT + change additions VS. changes on LEFT made the code disaligned and CSDiff got the result wrong ",csdiff-alignment,csdiff-afp
+vscode,cd9704db38edfc5d6e3d6938c21c4c7d06fe0864,"Alignment problem - more than 557 LOCs added at the beginning of the file at RIGHT, while only a few additions at LEFT (roughly ten lines added). This made CSDiff integrate incorrectly a simple change (blocks of code added + single update on RIGHT on a line)",csdiff-alignment,csdiff-afp

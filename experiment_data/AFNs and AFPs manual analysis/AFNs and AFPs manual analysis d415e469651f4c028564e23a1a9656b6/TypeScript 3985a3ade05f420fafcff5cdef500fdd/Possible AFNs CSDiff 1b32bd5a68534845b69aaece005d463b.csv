@@ -1,0 +1,83 @@
+﻿Repository,Commit,Comment,Category,Verdict,Added AFP for diff3 (files)
+storybook,e24fa909cbb2f36435f53fd67a173ec8c04eb6fc,"Neither diff3 nor csdiff reported conflict to the same file quadruple where the csdiff result diverged from the repository merge. The result also diverged for diff3, which indicates a manual change at the final merge result made by the developer.",manual-modification,not-afn,0
+storybook,185687fa9e1e483162ed44325d3462d0f4de1c2b,"Q(quadruple)1: both tools diverged from the original merde due to a whitespace removed manually from the final merge result.
+
+Q2: In another file quadruple we can observe 2 conflicts present for diff3 that are not present for csdiff, however both results diverge due to a manual change at the final merge result. CSDiff would have got it right if it wasn't this change.
+
+Q3: Similar to Q1",manual-modification,"diff3-afp, not-afn",1
+storybook,a88d010f7c0e6ab1fd5d14323c4482d6de52c428,"Q1: Results are equal to each other and to the final merge in the repository
+ 
+Q2: Results are equal to each other and to the final merge in the repository
+
+Q3: CsfFile.test.ts - Manual modification, CSDiff would have merged correctly otherwise",manual-modification,"diff3-afp, not-afn",1
+storybook,494d432e4cc4e5f90c9ace93f1043e2d4c948598,"Q1: Results are equal to each other and to the final merge in the repository
+ 
+Q2: /app/angular/src/builders/build-storybook/index.ts - Swapped import lines on the final merge. CSDiff's solution does not harm the code semantics. Manual modification, CSDiff would have merged correctly otherwise
+
+Q3: Results are equal to each other and to the final merge in the repository
+ 
+Q4: Results are equal to each other and to the final merge in the repository
+ ",manual-modification,"diff3-afp, not-afn",1
+storybook,3901ddc5ab6609fea76c972c00bdef61e34f218c,"Q1: lib/stories.ts - Complex case. Manual changes were made: Neither diff3 nor CSDiff would have got it right in this case, because the necessary adjustments impact on the overall code semantic. In the conflicts that CSDiff solved correctly, the code semantics was harmed. 
+
+Q2: layout.ts - Modifications to the final merge file removed some imports. Manual modification, CSDiff would have merged correctly otherwise",manual-modification,diff3-afp,1
+storybook,febec0f0c0c6dbf7efa6749d9210e16c5f704663,"Q1: /lib/api/src/modules/stories.ts - Manual modification, CSDiff would have merged correctly otherwise",manual-modification,"diff3-afp, not-afn",1
+storybook,1d7a1979e966268d02963a2018b19172e2583563,"Q1: lib/channels/src/index.ts - Manual modification, CSDiff would have merged correctly otherwise",manual-modification,"diff3-afp, not-afn",1
+vscode,75622a6c6a23b61602a4283e6172ec5b11016f97,"Q1: src/vs/workbench/contrib/debug/browser/disassemblyView.ts - A comment had its text updated and a line of code that CSDiff had merged correctly was encapsulated in a if clause that did not exist anywhere previously on left/right/base. Manual modification, CSDiff would have merged correctly otherwise",manual-modification,"diff3-afp, not-afn",1
+vscode,3246b3ec189b2def71e6c633887c7dbdacf6c5ce,"Q1: src/vs/platform/terminal/node/ptyService.ts - Swapped import lines on the final merge. CSDiff's solution does not harm the code semantics. Manual modification, CSDiff would have merged correctly otherwise.",manual-modification,"diff3-afp, not-afn",1
+vscode,631f1bdb8fdfe4491610e54bca68afeb85fb729c,"Q1: Results are equal to each other and to the final merge in the repository
+
+Q2: src/vs/base/common/lifecycle.ts - The solution proposed by both diff3 and csdiff breaks code semantics. CSDiff tried to solved but messed the code, probably due to the alignment problem. aFN CSDiff confirmed.",csdiff-error,afn-confirmed,0
+vscode,3ff91e7621bd3266ffb7c99bb37b6183d9c06663,"Q1 a Q6: Results are equal to each other and to the final merge in the repository
+
+Q7: src/vs/workbench/contrib/terminal/browser/terminalService.ts - Swapped import lines on the final merge. CSDiff's solution does not harm the code semantics.
+Manual modification, CSDiff would have merged correctly otherwise",manual-modification,"diff3-afp, not-afn",1
+vscode,1b591be32b246a17acb7704e1a1202f760df3201,"Q1: src/vs/vscode.d.ts - Conflict in a comment used as documentation. Manual modification, CSDiff would have merged correctly otherwise",manual-modification,"diff3-afp, not-afn",1
+vscode,e1dba2ac020dd2ce7629335c0fdad4e1ba4fbb99,"Q1: src/vs/platform/terminal/common/terminal.ts - CSDiff added 1 extra blank line and also two semicolons at the end of two lines. Manual modification, CSDiff would have merged correctly otherwise.
+
+ Q2-Q7: Results are equal to each other and to the final merge in the repository
+
+Q8: Results are equal to each other and to the final merge in the repository 
+
+Q9-Q16: Results are equal to each other and to the final merge in the repository",manual-modification,"diff3-afp, not-afn",1
+vscode,0aa308a705d6ce75d8d521c728be96f24228a617,"Q1: src/vs/workbench/contrib/notebook/browser/notebook.contribution.ts - Dev preferred to use the changes made in LEFT rather than the changes in RIGHT, but the changes in LEFT did not alter BASE. Manual modification, CSDiff would have merged correctly otherwise.
+
+Q2: src/vs/workbench/contrib/notebook/browser/notebookEditorWidget.ts - There was a newline present in LEFT/BASE but not in RIGHT, so it was likely added by the developer. Manual modification, CSDiff would have merged correctly otherwise.
+
+Q3: Results are equal to each other and to the final merge in the repository",manual-modification,"diff3-afp, not-afn",2
+vscode,b06388f501e8ee12b7277e172d334a02dd373d62,"Q1: Results are equal to each other and to the final merge in the repository
+
+Q2: src/vs/workbench/api/browser/mainThreadNotebook.ts - Manual modification, CSDiff would have merged correctly otherwise.
+
+ Q3: src/vs/workbench/api/common/extHost.api.impl.ts - CSDiff output is equal to the final merge result.
+
+Q4: src/vs/workbench/api/common/extHost.protocol.ts - Manual modification, CSDiff would have merged correctly otherwise.
+
+Q5: src/vs/workbench/api/common/extHostNotebook.ts - Developer added a newline. Manual modification, CSDiff would have merged correctly otherwise.
+
+Q6: Results are equal to each other and to the final merge in the repository",manual-modification,"diff3-afp, not-afn",3
+vscode,db2809fe44335e484a502a5a42b8e4d59a5772bf,"Q1: src/vs/workbench/contrib/terminal/browser/terminal.contribution.ts - Alignment problem made a code block to became nested inside other, impacting negatively on the code semantics. aFN CSDiff confirmed.
+
+Q2 - Q5: Results are equal to each other and to the final merge in the repository",csdiff-error,afn-confirmed,0
+vscode,cb044cec213d76d3ef842aba99efdfd4cf4e9b83,"Q1: src/vs/editor/browser/controller/textAreaInput.ts - Developer in LEFT erased part of line X that was present previously in BASE> Developer in RIGHT adds content content in the same line X. The expected result for the merge should be the line with what was removed by LEFT and added by RIGHT, but the developer preferred to ignore the changes made by LEFT and keep only the changes made by RIGHT.",manual-modification,"diff3-afp, not-afn",1
+vscode,e3ace1fe1ff804868d409f7650012493f6058bd9,"Q1: extensions/git/src/commands.ts - CSDiff managed to solve the conflicts pointed by diff3 but the result still does not match the final merge. Dev inserted another block of code updating variables and inserting new logic. - Manual modification, CSDiff would have merged correctly otherwise.",manual-modification,"diff3-afp, not-afn",1
+vscode,f41efe546c5fad1f75ad938c563aa57e28e0014d,"Q1: extensions/git/src/commands.ts - Swapped import lines on the final merge. CSDiff's solution does not harm the code semantics. Manual modification, CSDiff would have merged correctly otherwise.",manual-modification,"diff3-afp, not-afn",1
+vscode,0a030537240ebd9d6974142f31ce4de9a3294cf6,"Q1: src/vs/workbench/api/common/extHostNotebook.ts - Swapped import lines on the final merge. CSDiff's solution does not harm the code semantics. Manual modification, CSDiff would have merged correctly otherwise.
+
+Q2: Results are equal to each other and to the final merge in the repository",manual-modification,"diff3-afp, not-afn",1
+vscode,f3e30f67c8f30d8f0d712854b3299bad8f7d9553,"Q1: Results are equal to each other and to the final merge in the repository
+
+Q2: workbench/contrib/notebook/browser/notebookEditorWidget.ts - developer removed an import inside a destructuring that was not present on BASE/RIGHT, but was added on LEFT. Manual modification, CSDiff would have merged correctly otherwise.
+
+Q3: Results are equal to each other and to the final merge in the repository",manual-modification,"diff3-afp, not-afn",1
+vscode,9094be6ba8d41d502cc9888f6a89f9c2f78db405,"Q1: Results are equal to each other and to the final merge in the repository
+
+Q2: Results are equal to each other and to the final merge in the repository 
+
+Q3: src/vs/workbench/contrib/notebook/browser/notebookEditor.ts - diff3 duplicated 3 import lines that got merged into the final code. CSDiff would have prevented those lines from being merged. Manual modification, CSDiff would have merged correctly otherwise.",manual-modification,"diff3-afp, not-afn",1
+vscode,7c50981d8c6f5b6af0cae24a152132a9c23ac3df,"Q1: src/vs/editor/contrib/folding/folding.ts - developer updated the contents of a string in the final result. Manual modification, CSDiff would have merged correctly otherwise.",manual-modification,"diff3-afp, not-afn",1
+vscode,8d4cb4e436ef9d64656f6ee5ddb44f8c1497c900,"Q1: Results are equal to each other and to the final merge in the repository 
+
+Q2: src/vs/workbench/contrib/terminal/browser/terminalProcessManager.ts - Swapped import lines on the final merge. CSDiff's solution does not harm the code semantics. Manual modification, CSDiff would have merged correctly otherwise.
+
+Q3: Results are equal to each other and to the final merge in the repository ",manual-modification,"diff3-afp, not-afn",1

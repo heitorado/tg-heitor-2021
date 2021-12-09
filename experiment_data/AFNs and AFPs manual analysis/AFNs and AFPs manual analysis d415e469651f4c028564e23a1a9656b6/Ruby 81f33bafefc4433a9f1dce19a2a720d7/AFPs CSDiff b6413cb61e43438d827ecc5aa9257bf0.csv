@@ -1,0 +1,5 @@
+﻿Repository,Name,Comment,Category
+brew,"918f1b775b4705cf042a004bd0df0fb23ca7a7ad
+","CSDiff presents a false positive due to big changes on the code overall organization, creating many problems with lines alignment. CSDiff naturally increases the granularity of conflicts by greatly increasing the amount of lines in the file, and those lines might be compared in a way that does not make sense when blocks of code are moved around too much or are extracted to different contexts/scopes.",csdiff-alignment
+rails,91cd8ccdb5353427605aba61c3108363179426a8,"CSDiff presents a false positive due to big changes on the code overall organization, creating many problems with lines alignment. CSDiff naturally increases the granularity of conflicts by greatly increasing the amount of lines in the file, and those lines might be compared in a way that does not make sense when blocks of code are moved around too much or are extracted to different contexts/scopes.",csdiff-alignment
+,,,
